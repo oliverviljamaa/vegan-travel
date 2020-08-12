@@ -16,6 +16,12 @@
 </script>
 
 <style>
+  img {
+    display: block;
+    margin: 0 auto;
+    height: 3rem;
+  }
+
   p {
     font-size: 1.75rem;
     text-align: center;
@@ -25,5 +31,7 @@
 <svelte:head>
   <title>🌱 Vegan translations</title>
 </svelte:head>
+
+<img src="logo.svg" alt="" />
 
 <p>{translations.GB}</p>
