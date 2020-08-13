@@ -1,4 +1,6 @@
 <script context="module">
+  import countries from './_countries';
+
   export async function preload() {
     const res = await this.fetch('translations.json');
     const data = await res.json();
@@ -48,7 +50,7 @@
 
 <select bind:value={selected}>
   {#each Object.keys(translations) as country}
-    <option value={country}>{country}</option>
+    <option value={country}>{countries[country]}</option>
   {/each}
 </select>
 
