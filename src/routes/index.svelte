@@ -12,6 +12,7 @@
 </script>
 
 <script>
+  let selected;
   export let translations;
 </script>
 
@@ -20,6 +21,17 @@
     display: block;
     margin: 0 auto;
     height: 3rem;
+  }
+
+  select {
+    margin-top: 2rem;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1.25rem;
+    border-color: #333;
+    border-radius: 0.25rem;
+    appearance: none;
+    background: url('/vegan-translations/chevron.svg') no-repeat calc(100% - 0.5rem);
   }
 
   p {
@@ -34,4 +46,12 @@
 
 <img src="logo.svg" alt="" />
 
-<p>{translations.GB}</p>
+<select bind:value={selected}>
+  {#each Object.keys(translations) as country}
+    <option value={country}>{country}</option>
+  {/each}
+</select>
+
+{#if selected}
+  <p>{translations[selected]}</p>
+{/if}
