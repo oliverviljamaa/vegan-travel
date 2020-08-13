@@ -28,7 +28,7 @@
     padding: 0.5rem;
     width: 100%;
     font-size: 1.25rem;
-    border-color: #333;
+    border-color: #888;
     border-radius: 0.25rem;
     appearance: none;
     background: url('/vegan-translations/chevron.svg') no-repeat calc(100% - 0.5rem);
