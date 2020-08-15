@@ -2,8 +2,7 @@
   main {
     position: relative;
     max-width: 48rem;
-    background-color: white;
-    padding: 2em;
+    padding: 2rem;
     margin: 0 auto;
     box-sizing: border-box;
   }

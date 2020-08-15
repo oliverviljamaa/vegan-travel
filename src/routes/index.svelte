@@ -1,12 +1,19 @@
 <script context="module">
   import countries from './_countries';
+  import Select from './_Select.svelte';
 
   export async function preload() {
     const res = await this.fetch('translations.json');
     const data = await res.json();
 
     if (res.status === 200) {
-      return { translations: data };
+      return {
+        translations: data,
+        items: Object.entries(data).map(([countryCode]) => ({
+          value: countryCode,
+          label: countries[countryCode],
+        })),
+      };
     } else {
       this.error(res.status, data.message);
     }
@@ -14,26 +21,16 @@
 </script>
 
 <script>
-  let selected;
+  let selectedValue;
   export let translations;
+  export let items;
 </script>
 
 <style>
   img {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     height: 3rem;
-  }
-
-  select {
-    margin-top: 2rem;
-    padding: 0.5rem;
-    width: 100%;
-    font-size: 1.25rem;
-    border-color: #888;
-    border-radius: 0.25rem;
-    appearance: none;
-    background: url('/chevron.svg') no-repeat calc(100% - 0.5rem);
   }
 
   p {
@@ -48,12 +45,8 @@
 
 <img src="logo.svg" alt="" />
 
-<select bind:value={selected}>
-  {#each Object.keys(translations) as country}
-    <option value={country}>{countries[country]}</option>
-  {/each}
-</select>
+<Select {items} bind:selectedValue />
 
-{#if selected}
-  <p>{translations[selected]}</p>
+{#if selectedValue}
+  <p>{translations[selectedValue]}</p>
 {/if}
