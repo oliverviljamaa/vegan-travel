@@ -33,7 +33,7 @@
     border-color: #888;
     border-radius: 0.25rem;
     appearance: none;
-    background: url('/vegan-translations/chevron.svg') no-repeat calc(100% - 0.5rem);
+    background: url('/chevron.svg') no-repeat calc(100% - 0.5rem);
   }
 
   p {
@@ -43,7 +43,7 @@
 </style>
 
 <svelte:head>
-  <title>🌱 Vegan translations</title>
+  <title>🌱 Vegan travel</title>
 </svelte:head>
 
 <img src="logo.svg" alt="" />
