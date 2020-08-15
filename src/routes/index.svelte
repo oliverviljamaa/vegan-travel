@@ -43,7 +43,7 @@
 </style>
 
 <svelte:head>
-  <title>🌱 Vegan travel</title>
+  <title>Vegan Travel</title>
 </svelte:head>
 
 <img src="logo.svg" alt="" />
