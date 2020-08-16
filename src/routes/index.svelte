@@ -29,11 +29,12 @@
 <style>
   img {
     display: block;
-    margin: 0 auto 2rem;
+    margin: 0 auto 6rem;
     height: 3rem;
   }
 
   p {
+    margin-top: 3rem;
     font-size: 1.75rem;
     text-align: center;
   }
