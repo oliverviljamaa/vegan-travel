@@ -27,9 +27,26 @@
 </script>
 
 <style>
+  main {
+    max-width: 48rem;
+    padding: 6rem 2rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  nav div {
+    margin: 2rem;
+  }
+
   img {
     display: block;
-    margin: 0 auto 6rem;
+    margin: 0 auto 4rem;
     height: 3rem;
   }
 
@@ -44,10 +61,17 @@
   <title>Vegan Travel</title>
 </svelte:head>
 
-<img src="logo.svg" alt="" />
+<main>
+  <img src="logo.svg" alt="" />
 
-<Select {items} bind:selectedValue />
+  {#if selectedValue}
+    <p>{translations[selectedValue]}</p>
+  {/if}
 
-{#if selectedValue}
-  <p>{translations[selectedValue]}</p>
-{/if}
+</main>
+
+<nav>
+  <div>
+    <Select {items} bind:selectedValue />
+  </div>
+</nav>

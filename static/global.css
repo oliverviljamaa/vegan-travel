@@ -6,9 +6,17 @@ body {
   background-color: white;
 }
 
+nav {
+  background-color: white;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: white;
+    background-color: #121212;
+  }
+
+  nav {
     background-color: #121212;
   }
 }
