@@ -17,4 +17,4 @@ jobs:
           git config --global user.email "oliver.viljamaa@gmail.com"
           git config --global user.name "Oliver Viljamaa"
           yarn export
-          yarn deploy -t ${{ secrets.TOKEN }}
+          yarn deploy -t ${{ secrets.GITHUB_TOKEN }}
